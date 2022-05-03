@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MyWeChat</string>
+    <string name="background">TODO</string>
+    <string name="todo">TODO</string>
+    <string name="circle_user_name">circle_name</string>
+    <string name="content_test">content_test</string>
+    <string name="user_desc">TODO</string>
+    <string name="commands_user">commands</string>
+    <string name="commands_content">commands_content</string>
+</resources>
