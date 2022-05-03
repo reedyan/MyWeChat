@@ -13,7 +13,6 @@ class ImageAdapter(
     private val imagesDataset: List<Image>?,
 ) : RecyclerView.Adapter<ImageAdapter.ItemViewHolder>() {
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         // create a new view
         val adapterLayout = LayoutInflater.from(parent.context)

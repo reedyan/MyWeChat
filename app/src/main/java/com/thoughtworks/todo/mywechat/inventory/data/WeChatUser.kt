@@ -5,6 +5,16 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
 
+data class WeChatUser(
+    val id: Int =0,
+    val userName: String,
+    val nick: String,
+    val avatar: String,
+    @field:Json(name = "profile-image")
+    val profileImage: String
+)
+
+/*
 @Entity(tableName = "weChatUser")
 data class WeChatUser(
     @PrimaryKey(autoGenerate = true)
@@ -18,4 +28,4 @@ data class WeChatUser(
     @field:Json(name = "profile-image")
     @ColumnInfo(name = "profileImage")
     val profileImage: String
-)
+)*/

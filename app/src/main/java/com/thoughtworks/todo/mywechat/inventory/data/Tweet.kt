@@ -7,6 +7,38 @@ import androidx.room.PrimaryKey
 /*
 *  create data structure
 * */
+data class Tweet(
+    val id: Int = 0,
+    val content: String?,
+    val images: List<Image>?,
+    val sender: User?,
+    val comments: List<Comment>?,
+    val error: String?,
+    val unknownError: String?
+)
+
+data class Image(
+    val id: Int = 0,
+    val url: String
+)
+
+data class Comment(
+    val id: Int = 0,
+    val content: String,
+    val sender: User
+)
+
+data class User(
+    val id: Int = 0,
+    val userName: String,
+    val nick: String,
+    val avatar: String
+)
+
+/*
+*  create data structure
+* *//*
+
 @Entity
 data class Tweet(
     @PrimaryKey(autoGenerate = true)
@@ -50,3 +82,4 @@ data class User(
     val nick: String,
     @ColumnInfo(name = "avatar")
     val avatar: String)
+*/
