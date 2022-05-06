@@ -37,8 +37,8 @@ class TweetAdapter(
         holder.nameText.text = item.sender?.nick
 
         holder.allCircleImage.adapter = ImageAdapter(item.images)
-        holder.allCircleImage.layoutManager = GridLayoutManager(context, 3,)
 
+        holder.allCircleImage.layoutManager = GridLayoutManager(context, 3)
 
         holder.allCommentText.adapter = CommentAdapter(item.comments)
         holder.allCommentText.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL,false)

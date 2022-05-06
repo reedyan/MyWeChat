@@ -3,6 +3,14 @@
     package="com.thoughtworks.todo.mywechat">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <!--允许Glide监视连接状态，并在用户从断开连接到已连接网络的状态。-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!--要从DCIM或图片等本地文件夹加载图像-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <!--将 Glide 的缓存存储在公共 sdcard 上，您需要使用 WRITE_EXTERNAL_STORAGE权限-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
 
     <application
         android:allowBackup="true"

@@ -7,6 +7,7 @@ import androidx.room.PrimaryKey
 /*
 *  create data structure
 * */
+
 data class Tweet(
     val id: Int = 0,
     val content: String?,

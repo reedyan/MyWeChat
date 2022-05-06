@@ -1,14 +1,16 @@
 package com.thoughtworks.todo.mywechat.ui.viewmodel
 
+import android.view.View
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.recyclerview.widget.RecyclerView
 import com.thoughtworks.todo.mywechat.inventory.data.Tweet
 import com.thoughtworks.todo.mywechat.inventory.data.WeChatUser
 import com.thoughtworks.todo.mywechat.network.WeChatDataApi
 import kotlinx.coroutines.launch
 
-class TweetViewModel: ViewModel() {
+class TweetViewModel(itemView: View): ViewModel(){
     init {
         getUser()
         getTweets()
@@ -35,4 +37,5 @@ class TweetViewModel: ViewModel() {
             tweet.value = onlinePostDetail
         }
     }
+
 }

@@ -65,6 +65,7 @@ dependencies {
     //
     implementation 'com.makeramen:roundedimageview:2.3.0'
 
+
     //Room
     implementation "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version"

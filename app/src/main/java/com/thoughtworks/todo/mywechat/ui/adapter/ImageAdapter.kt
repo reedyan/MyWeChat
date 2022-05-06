@@ -6,8 +6,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.thoughtworks.todo.mywechat.R
 import com.thoughtworks.todo.mywechat.inventory.data.Image
+
 
 class ImageAdapter(
     private val imagesDataset: List<Image>?,
@@ -24,16 +26,26 @@ class ImageAdapter(
         val circleImage: ImageView = view.findViewById(R.id.circle_Pages)
     }
 
-    override fun getItemCount() = imagesDataset?.size ?:0
+    override fun getItemCount() = imagesDataset?.size ?: 0
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = imagesDataset?.get(position)
         if (item != null) {
-            Glide.with(holder.circleImage)
-                .load(item.url)
-                .into(holder.circleImage)
+            when (imagesDataset?.size) {
+                1 -> {
+                    Glide.with(holder.circleImage)
+                        .load(item.url)
+                        .apply(RequestOptions().override(200, 200))
+                        .into(holder.circleImage)
+                }
+                else -> {
+                    Glide.with(holder.circleImage)
+                        .load(item.url)
+                        .apply(RequestOptions().override(150, 150))
+                        .into(holder.circleImage)
+                }
+            }
         }
-
     }
 
 }
