@@ -26,3 +26,13 @@ data class WeChatUser(
     @ColumnInfo(name = "profileImage")
     val profileImage: String
 )*/
+/*
+* class UserViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val weChatBackground : ImageView = view.findViewById(R.id.wechat_background)
+        val weChatUserName: TextView = view.findViewById(R.id.user_text)
+        val weChatAvatar: ImageView = view.findViewById(R.id.avatar_page)
+
+    }
+*
+*
+* */

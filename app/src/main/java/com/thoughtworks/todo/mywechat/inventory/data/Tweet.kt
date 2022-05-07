@@ -34,7 +34,11 @@ data class User(
     val userName: String,
     val nick: String,
     val avatar: String
-)
+) {
+    operator fun get(i: Int): Any {
+        TODO("Not yet implemented")
+    }
+}
 
 /*
 *  create data structure

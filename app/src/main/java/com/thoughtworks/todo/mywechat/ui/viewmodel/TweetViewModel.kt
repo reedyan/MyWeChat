@@ -1,20 +1,19 @@
 package com.thoughtworks.todo.mywechat.ui.viewmodel
 
-import android.view.View
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.recyclerview.widget.RecyclerView
 import com.thoughtworks.todo.mywechat.inventory.data.Tweet
 import com.thoughtworks.todo.mywechat.inventory.data.WeChatUser
 import com.thoughtworks.todo.mywechat.network.WeChatDataApi
 import kotlinx.coroutines.launch
 
-class TweetViewModel(itemView: View): ViewModel(){
+class TweetViewModel() : ViewModel() {
     init {
         getUser()
         getTweets()
     }
+
     val user: MutableLiveData<WeChatUser> = MutableLiveData()
 
     fun getUser() {
@@ -24,15 +23,13 @@ class TweetViewModel(itemView: View): ViewModel(){
             user.value = userResult
         }
     }
-     val tweet: MutableLiveData<List<Tweet>> = MutableLiveData()
-     //val tt: LiveData<List<Tweet>> = tweet
-     private fun getTweets() {
-         /*
-         * 不为空
-         * */
+
+    val tweet: MutableLiveData<List<Tweet>> = MutableLiveData()
+    private fun getTweets() {
         viewModelScope.launch {
             val result = WeChatDataApi.retrofitService.getData()
-            val onlinePostDetail: List<Tweet> = result.filter { i -> i.error == null && i.unknownError == null && i.images != null
+            val onlinePostDetail: List<Tweet> = result.filter { i ->
+                i.error == null && i.unknownError == null && i.images != null
             }
             tweet.value = onlinePostDetail
         }

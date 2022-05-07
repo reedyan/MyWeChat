@@ -9,7 +9,6 @@ import com.thoughtworks.todo.mywechat.R
 import com.thoughtworks.todo.mywechat.inventory.data.Comment
 
 class CommentAdapter(
-//    private val commendsContext: Context,
     private val commendsDataset: List<Comment>?,
 ) : RecyclerView.Adapter<CommentAdapter.ItemViewHolder>() {
 
