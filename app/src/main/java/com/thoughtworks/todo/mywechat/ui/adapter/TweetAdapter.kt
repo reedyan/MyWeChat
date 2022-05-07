@@ -19,11 +19,13 @@ import com.thoughtworks.todo.mywechat.inventory.data.WeChatUser
 class TweetAdapter(
     private val context: Context,
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-     var user: WeChatUser?=null
-     var dataset: List<Tweet> = emptyList()
+    var user: WeChatUser? = null
+    var dataset: List<Tweet> = emptyList()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val userAdapterLayout = LayoutInflater.from(parent.context).inflate(R.layout.list_wechatuser, parent, false)
-        val circleAdapterLayout = LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
+        val userAdapterLayout =
+            LayoutInflater.from(parent.context).inflate(R.layout.list_wechatuser, parent, false)
+        val circleAdapterLayout =
+            LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
         return when (viewType) {
             VIEW_TYPE_USER -> UserViewHolder(userAdapterLayout)
             else -> ItemViewHolder(circleAdapterLayout)
