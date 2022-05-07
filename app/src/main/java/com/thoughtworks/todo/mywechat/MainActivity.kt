@@ -2,17 +2,12 @@ package com.thoughtworks.todo.mywechat
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.thoughtworks.todo.mywechat.inventory.data.WeChatUser
 import com.thoughtworks.todo.mywechat.ui.adapter.TweetAdapter
 import com.thoughtworks.todo.mywechat.ui.viewmodel.TweetViewModel
 
-//import com.thoughtworks.todo.mywechat.ui.UserViewModel
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
