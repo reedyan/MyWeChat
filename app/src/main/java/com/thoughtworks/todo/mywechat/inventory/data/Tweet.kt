@@ -2,7 +2,7 @@ package com.thoughtworks.todo.mywechat.inventory.data
 
 
 data class Tweet(
-    val id: Int = 0,
+    val id: Int, // TODO: 没必要加 =0
     val content: String?,
     val images: List<Image>?,
     val sender: User?,
@@ -28,6 +28,7 @@ data class User(
     val nick: String,
     val avatar: String
 ) {
+    // TODO: 无用的代码
     operator fun get(i: Int): Any {
         TODO("Not yet implemented")
     }

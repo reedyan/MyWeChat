@@ -69,12 +69,14 @@ class TweetAdapter(
         }
     }
 
+    // TODO: 内部类一般不放到外部类的中间位置
     class UserViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val weChatBackground: ImageView = view.findViewById(R.id.wechat_background)
         val weChatUserName: TextView = view.findViewById(R.id.user_text)
         val weChatAvatar: ImageView = view.findViewById(R.id.avatar_page)
     }
 
+    // TODO: 注释的格式不对
     class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         //     沙发 content
         val textContent: TextView = view.findViewById(R.id.text_content)

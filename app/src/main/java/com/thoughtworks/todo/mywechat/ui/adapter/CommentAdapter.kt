@@ -15,7 +15,7 @@ class CommentAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         // create a new view
         val adapterLayout = LayoutInflater.from(parent.context)
-            .inflate(R.layout.list_comments, parent, false)
+            .inflate(R.layout.list_comments, parent, false) // TODO: layout命名不规范
 
         return ItemViewHolder(adapterLayout)
     }
@@ -29,9 +29,9 @@ class CommentAdapter(
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = commendsDataset?.get(position)
-        if (item != null) {
+        if (item != null) {// TODO: 可以使用 ?.let
             holder.commentText.text = item.sender.nick
-            holder.commentContent.text = ":" + item.content
+            holder.commentContent.text = ":" + item.content // TODO: 需要修一下这个警告
         }
 
     }
