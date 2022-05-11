@@ -1,4 +1,4 @@
-package com.thoughtworks.todo.mywechat.network
+package com.thoughtworks.todo.mywechat.network // TODO: 包名和path不对应
 
 import com.thoughtworks.todo.mywechat.inventory.data.Tweet
 import com.thoughtworks.todo.mywechat.inventory.data.WeChatUser
@@ -12,11 +12,11 @@ import retrofit2.http.GET
 * */
 
 //Add the following constant for the base URL for the web service
-private const val WeChat_CIRCLE_JSON_URL =
+private const val WeChat_CIRCLE_JSON_URL =// TODO: 命名不规范
     "https://tw-mobile-xian.github.io/"
 
 //add a Retrofit builder to build and create a Retrofit object
-
+// TODO: 相关的代码最好放在一起
 private val retrofit = Retrofit.Builder()
     .addConverterFactory(ScalarsConverterFactory.create())
     .addConverterFactory(MoshiConverterFactory.create())

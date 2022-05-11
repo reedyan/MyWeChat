@@ -23,7 +23,7 @@ class ImageAdapter(
     }
 
     class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val circleImage: ImageView = view.findViewById(R.id.circle_Pages)
+        val circleImage: ImageView = view.findViewById(R.id.circle_Pages) // TODO: view id 命名不规范
     }
 
     override fun getItemCount() = imagesDataset?.size ?: 0
