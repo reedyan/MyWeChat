@@ -1,4 +1,4 @@
-package com.thoughtworks.todo.mywechat.ui.adapter
+package com.thoughtworks.todo.mywechat.ui.items
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,22 +8,21 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.thoughtworks.todo.mywechat.R
-import com.thoughtworks.todo.mywechat.inventory.data.Image
+import com.thoughtworks.todo.mywechat.model.Image
 
 
 class ImageAdapter(
     private val imagesDataset: List<Image>?,
 ) : RecyclerView.Adapter<ImageAdapter.ItemViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        // create a new view
-        val adapterLayout = LayoutInflater.from(parent.context)
-            .inflate(R.layout.list_images, parent, false)
-        return ItemViewHolder(adapterLayout)
+    class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val circleImage: ImageView = view.findViewById(R.id.imageview_circlepage)
     }
 
-    class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val circleImage: ImageView = view.findViewById(R.id.circle_Pages) // TODO: view id 命名不规范
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
+        val adapterLayout = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_images, parent, false)
+        return ItemViewHolder(adapterLayout)
     }
 
     override fun getItemCount() = imagesDataset?.size ?: 0

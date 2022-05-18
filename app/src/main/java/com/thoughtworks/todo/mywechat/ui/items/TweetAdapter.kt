@@ -1,4 +1,4 @@
-package com.thoughtworks.todo.mywechat.ui.adapter
+package com.thoughtworks.todo.mywechat.ui.items
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -12,20 +12,45 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.thoughtworks.todo.mywechat.R
-import com.thoughtworks.todo.mywechat.inventory.data.Tweet
-import com.thoughtworks.todo.mywechat.inventory.data.User
-import com.thoughtworks.todo.mywechat.inventory.data.WeChatUser
+import com.thoughtworks.todo.mywechat.model.Tweet
+import com.thoughtworks.todo.mywechat.model.WeChatUser
 
 class TweetAdapter(
     private val context: Context,
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
     var user: WeChatUser? = null
     var dataset: List<Tweet> = emptyList()
+
+    companion object {
+        const val VIEW_TYPE_USER = 0
+        const val VIEW_TYPE_TWEET = 1
+    }
+
+    class UserViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val weChatBackground: ImageView = view.findViewById(R.id.wechat_background)
+        val weChatUserName: TextView = view.findViewById(R.id.user_text)
+        val weChatAvatar: ImageView = view.findViewById(R.id.avatar_page)
+    }
+
+    class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+
+        val textContent: TextView = view.findViewById(R.id.text_content)
+
+        val avatarImage: ImageView = view.findViewById(R.id.avatar_image)
+
+        val nameText: TextView = view.findViewById(R.id.user_name)
+
+        val allCircleImage: RecyclerView = view.findViewById(R.id.image_recycleView)
+
+        val allCommentText: RecyclerView = view.findViewById(R.id.comment_recycleView)
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val userAdapterLayout =
-            LayoutInflater.from(parent.context).inflate(R.layout.list_wechatuser, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.item_wechatuser, parent, false)
         val circleAdapterLayout =
-            LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.item_tweet, parent, false)
         return when (viewType) {
             VIEW_TYPE_USER -> UserViewHolder(userAdapterLayout)
             else -> ItemViewHolder(circleAdapterLayout)
@@ -69,35 +94,7 @@ class TweetAdapter(
         }
     }
 
-    // TODO: 内部类一般不放到外部类的中间位置
-    class UserViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val weChatBackground: ImageView = view.findViewById(R.id.wechat_background)
-        val weChatUserName: TextView = view.findViewById(R.id.user_text)
-        val weChatAvatar: ImageView = view.findViewById(R.id.avatar_page)
-    }
-
-    // TODO: 注释的格式不对
-    class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        //     沙发 content
-        val textContent: TextView = view.findViewById(R.id.text_content)
-
-        //     朋友圈 用户照片
-        val avatarImage: ImageView = view.findViewById(R.id.avatar_image)
-
-        //     朋友圈用户名
-        val nameText: TextView = view.findViewById(R.id.user_name)
-
-        //    朋友圈照片
-        val allCircleImage: RecyclerView = view.findViewById(R.id.image_recycleView)
-
-        //     朋友圈comment
-        val allCommentText: RecyclerView = view.findViewById(R.id.comment_recycleView)
-    }
-
     override fun getItemCount() = dataset.size + 1
 
-    companion object {
-        const val VIEW_TYPE_USER = 0
-        const val VIEW_TYPE_TWEET = 1
-    }
+
 }
